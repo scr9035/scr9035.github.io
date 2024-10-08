@@ -1,0 +1,81 @@
+body {
+    background: linear-gradient(to right, #f09819, #edde5d);
+    color: #333;
+    font-family: 'lato', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #e65c00;
+    color: #fff;
+    text-align: center;
+    padding: 2em 0;
+    background-image: url("chalkboard.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+section {
+    padding: 20px;
+    margin: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.blog-post {
+    border-bottom: 5px solid #eeaa7d;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    display: flex;           /* Enable flexbox layout */
+    flex-direction: column; /* Stack elements vertically by default */
+    align-items: flex-start; /* Align items to the left */
+}
+
+.blog-post img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 20px;
+    align-self: flex-start; /* Align the image to the right */
+    margin-top: 10px;     /* Add some space above the image */
+}
+
+.blog-post p {
+    margin-top: 10px;     /* Add some space above the paragraph */
+    margin: 0;
+}
+
+.blog-post h3 {
+    color: #e65c00;
+}
+
+a {
+    color: #e65c00;
+}
+
+.contact-icons img {
+    width: 64px;  /* Set your desired width */
+    height: 64px; /* Set your desired height */
+}
+
+.contact-icons {
+    display: flex;          /* Enables flexbox layout */
+    justify-content: space-between; /* Evenly distribute icons with space between them */
+    align-items: center;     /* Vertically align icons to the center */
+}
+
+.contact-icons a { 
+    display: inline-block; 
+}
