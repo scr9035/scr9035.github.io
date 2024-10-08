@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socioeconomic And Biological Scaling Laws</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3, h4, h5 {
+            color: #333;
+        }
+        .equation {
+            text-align: center;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Socioeconomic And Biological Scaling Laws</h1>
+
+    <p>Maxwell Shapiro and Scott Riggs</p>
+    <p>Department of Applied Physics, Stanford University</p>
+    <p>APS/123-QED</p>
+
+    <p>I just wanted to TEX up the math behind the sigmoidal scaling behavior of biological systems. I go through, in excruciating detail, how to set up and solve the differential growth equation. Along the way, I consider the cases of linear, sub-linear, and super-linear behavior, and discuss what I gleaned from Geoffrey West's paper [1]. I conclude by finding a closed-form expression for the dependence of the inflection point on the set of initial parameters that define the biological problem these parameters would either need to be theoretically predicted by some other theory or empirically found by fitting to the derived functional forms.</p>
+
+    <h2>I. SETTING UP THE GROWTH EQUATION</h2>
+
+    <p>Growth is constrained by the availability of resources and their rates of consumption. Resources, Y, are used for both maintenance and growth. If, on average, it requires a quantity R per unit time to maintain an individual and a quantity E to add a new one to the population, then this allocation of resources is expressed as <span class="math-inline">Y\=RN\+E\(\\frac\{dN\}\{dt\}\)</span> where <span class="math-inline">\\frac\{dN\}\{dt\}</span> is the population growth rate. Assuming that the resources denoted by Y scale as <span class="math-inline">Y\(t\)\=Y\_\{0\}N\(t\)^\{\\beta\}</span> we then find a differential equation for <span class="math-inline">N\(t\)</span></p>
+
+    <div class="equation"><span class="math-inline">\\frac\{dN\}\{dt\}\=\(\\frac\{Y\_\{0\}\}\{E\}\)N\(t\)^\{\\beta\}\-\(\\frac\{R\}\{E\}\)N\(t\)</span> (1)</div>
+
+    <p>This is the growth equation, and it is this differential equation that we will be principally concerned with in these notes. Observe that inherent in this derivation is an assumption that the maintenance cost scales linearly with <span class="math-inline">N\(t\)</span> this may or may not be true, but this is how Geoffrey West proceeds, and so I will continue with this assumption as well. He addresses the possibility for different power law scalings in his supplementary text, but he claims that it doesn't qualitatively change any of the results.</p>
+
+    <h2>II. SOLVING THE GROWTH EQUATION</h2>
+
+    <p>In order to solve the growth equation analytically, we have to consider two base cases: (1) <span class="math-inline">\\beta\=1</span> and (2) <span class="math-inline">\\beta\\ne1</span>. I start with (1) since it's the simplest, but the really interesting behavior is in case (2).</p>
+
+    <h3>A. First Case: Growth Equation With <span class="math-inline">\\beta\=1</span></h3>
+
+    <p>In this case, the growth equation simplifies into the form</p>
+
+    <div class="equation"><span class="math-inline">\\frac\{dN\}\{dt\}\=\(\\frac\{Y\_\{0\}\-R\}\{E\}\)N\(t\),</span> (2)</div>
+
+    <p>which has as its solution either decaying <span class="math-inline">\(Y\_\{0\}<R\)</span> or growing <span class="math-inline">\(Y\_\{0\}\>R\)</span> exponentials. There really isn't too much more to say about this case, but I just wanted to include it for completeness.</p>
+
+    <h3>B. Second Case: Growth Equation With <span class="math-inline">\\beta\\ne1</span></h3>
+
+    <p>To proceed for the case with <span class="math-inline">\\beta\\ne1</span> we begin by doing a variable substitution <span class="math-inline">x\(t\)\\equiv N\(t\)^\{1\-\\beta\}</span>, which will greatly simplify the original differential equation. This substitution implies that <span class="math-inline">\\dot\{N\}\(t\)\=\(\\frac\{1\}\{1\-\\beta\}\)\(x\(t\)^\{\\frac\{\\beta\}\{1\-\\beta\}\}\)\\dot\{x\}\(t\)</span>, and so, plugging into the growth equation, we have</p>
+
+    <div class="equation"><span class="math-inline">\\frac\{dx\}\{dt\}\=\(\\frac\{1\-\\beta\}\{E\}\)\(Y\_\{0\}\-Rx\(t\)\)\.</span> (3)</div>
+
+    <p>This is just a linear, first-order differential equation, and so can be solved by standard procedures. My favorite method is to guess a solution <span class="math-inline">x\_\{p\}\(t\)\=</span> Constant that is a particular solution to the differential equation and then add to it a solution to the homogeneous equation <span class="math-inline">\\dot\{x\}\_\{h\}\(t\)\=\-\(\\frac\{1\-\\beta\}\{E\}\)Rx\_\{h\}\(t\)\.</span> Since <span class="math-inline">x\_\{p\}\(t\)\=\\frac\{Y\_\{0\}\}\{R\}</span> and <span class="math-inline">x\_\{h\}\(t\)\=Ce^\{\-\\frac\{R\(1\-\\beta\)t\}\{E\}\}</span> are particular and homogeneous solutions, respectively, with C a constant of integration to be determined, we see that the general solution to Equation 3 is</p>
+
+    <div class="equation"><span class="math-inline">x\(t\)\=\\frac\{Y\_\{0\}\}\{R\}\+Ce^\{\-\\frac\{R\(1\-\\beta\)t\}\{E\}\}</span> (4)</div>
+
+    <p>Re-expressing Equation 4 in terms of the population <span class="math-inline">N\(t\)</span> (including the constant of integration C), we arrive at Geoffrey West's solution, which has either sigmoidal or super-exponential growth depending on whether <span class="math-inline">\\beta<1</span> or <span class="math-inline">\\beta\>1</span>, respectively:</p>
+
+    <div class="equation"><span class="math-inline">N\(t\)\=\(\\frac\{Y\_\{0\}\}\{R\}\+\(N\(0\)^\{1\-\\beta\}\-\\frac\{Y\_\{0\}\}\{R\}\)e^\{\-\\frac\{R\(1\-\\beta\)t\}\{E\}\}\)^\{\\frac\{1\}\{1\-\\beta\}\}</span> (5)</div>
+
+    <p>In Equation 5, <span class="math-inline">N\(0\)</span> denotes the population at <span class="math-inline">t\=0</span>.</p>
+
+    <h2>III. SOCIOECONOMIC SOLUTION: SUPER-EXPONENTIALLY GROWING, <span class="math-inline">\\beta\>1</span></h2>
+
+    <p>Take the case of <span class="math-inline">\\beta\>1</span> first, which means dealing with the equation</p>
+
+    <div class="equation"><span class="math-inline">N\(t\)\=\\frac\{1\}\{\(\\frac\{Y\_\{0\}\}\{R\}\+\(\\frac\{1\}\{N\(0\)^\{\\beta\-1\}\}\-\\frac\{Y\_\{0\}\}\{R\}\)e^\{\\frac\{R\(\\beta\-1\)t\}\{E\}\}\)^\{\\frac\{1\}\{\\beta\-1\}\}\},</span> (6)</div>
+
+    <p>where all I have done is rearrange the <span class="math-inline">1\-\\beta</span> terms in Equation 5 to <span class="math-inline">\-\(\\beta\-1\)</span> so that we are dealing everywhere with positive quantities. In this form, it's clearer that the finite time singularity happens when the denominator of Equation 6 is zero. One subtlety that I hadn't appreciated before working through the math is that the <span class="math-inline">\\beta\>1</span> condition isn't enough to guarantee super-exponential growth we also need <span class="math-inline">\\frac\{1\}\{N\(0\)^\{\\beta\-1\}\}\-\\frac\{Y\_\{0\}\}\{R\}<0</span> or else the denominator of Equation 6 never equals zero and we never have a finite time singularity. It's not obvious to me why this condition (which relates the population at <span class="math-inline">t\=0 \(N\(0\)\)</span>, the fixed total resources at <span class="math-inline">t\=0 \(Y\_\{0\}\)</span>, and the quantity required per unit time to maintain an individual (R)) is important, but it definitely comes out of the math.</p>
+
+    <p>Because of this, suppose that both the <span class="math-inline">\\beta\>1</span> and <span class="math-inline">\\frac\{1\}\{N\(0\)^\{\\beta\-1\}\}\-\\frac\{Y\_\{0\}\}\{R\}<0</span> conditions are true. In this case, we can solve for the time at which the denominator equals zero, with the answer that</p>
+
+    <div class="equation">
+        <span class="math-inline">\\begin\{matrix\}t\_\{singularity\}\=&\-\(\\frac\{E\}\{R\(\\beta\-1\)\}\)ln\[1\-\\frac\{R\}\{Y\_\{0\}N\(0\)^\{\\beta\-1\}\}\]\\end\{matrix\}</span>
+        <br>
+        <span class="math-inline">\\approx\\frac\{E\}\{Y\_\{0\}\(\\beta\-1\)N\(0\)^\{\\beta\-1\}\}\.</span> (7)
+    </div>
+
+    <p>The approximation comes from doing a Taylor expansion for <span class="math-inline">ln\[1\-x\]</span> in the small parameter <span class="math-inline">x\=\\frac\{R\}\{Y\_\{0\}N\(0\)^\{\\beta\-1\}\}</span>, but Geoffrey West's answer has a typo.</p>
+
+    <p>The super-exponential behavior persists until the finite resources are used up, at which point the condition <span class="math-inline">\\frac\{1\}\{N\(0\)^\{\\beta\-1\}\}\-\\frac\{Y\_\{0\}\}\{R\}<0</span> is no longer true and the total population experiences a collapse.</p>
+
+    <h2>IV. BIOLOGICAL SOLUTION: SIGMOIDAL EVOLUTION, <span class="math-inline">\\beta<1</span></h2>
+
+    <p>Finally, for the case of $\beta
