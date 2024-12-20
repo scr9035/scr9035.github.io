@@ -1,0 +1,100 @@
+body {
+    background: linear-gradient(to right, #f09819, #edde5d);
+    color: #333;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #e65c00; /* Fallback color */
+    /* Remove comment to add image */
+    /* background-image: url("chalkboard.jpg");  */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 2em 0;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 1.8em;
+}
+
+h3 {
+  font-size: 1.4em;
+  color: #e65c00;
+}
+
+.part, .chapter {
+  padding: 20px;
+  margin: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.vivid-vision {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a {
+    color: #e65c00;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 40px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+ol {
+  list-style-type: decimal;
+  margin-left: 40px;
+}
+
+strong {
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .vivid-vision {
+        max-width: 95%;
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+}
