@@ -44,6 +44,10 @@ h3 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.sub-chapter {
+  margin-bottom: 20px;
+}
+
 .container {
     max-width: 960px;
     margin: 0 auto;

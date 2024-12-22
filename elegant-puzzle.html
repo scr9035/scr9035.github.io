@@ -3,94 +3,393 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>An Elegant Puzzle: Notes on Chapters 1 & 2</title>
+    <title>An Elegant Puzzle: Notes on Engineering Management</title>
     <link rel="stylesheet" href="styles-book-review.css">
 </head>
 <body>
     <article class="book-review">
         <header>
-            <h1>An Elegant Puzzle: Notes on Chapters 1 & 2</h1>
+            <h1>An Elegant Puzzle: Notes on Engineering Management</h1>
         </header>
 
-        <section class="chapter">
-            <h2>Chapter 1: Introduction</h2>
-            <p>No notes necessary for this chapter.</p>
+        <section class="part">
+            <section class="chapter">
+                <h2>Chapter 1: Introduction</h2>
+                <ul>
+                    <li>[My thoughts will be contained within brackets. Anything else are ~quotes from the book]</li>
+                    <li>[Nothing to note in the introduction]</li>
+                </ul>
+            </section>
         </section>
 
         <section class="part">
-            <h2>Chapter 2: Organizations</h2>
+            <section class="chapter">
+                <h2>Chapter 2: Organizations</h2>
+
+                <section class="sub-chapter">
+                    <h3>2.1 Sizing Teams</h3>
+                    <ul>
+                        <li>Managers should support six to eight engineers.</li>
+                        <li>Managers of managers should support four to six managers.</li>
+                    </ul>
+                </section>
+
+                <section class="sub-chapter">
+                    <h3>2.2.2 Managing Down Debt</h3>
+                    <ul>
+                        <li>When the team is repaying debt, your stakeholders are probably antsy waiting for the team to start delivering new stuff, and your obligation is to prevent that impatience from causing a backslide!</li>
+                    </ul>
+                </section>
+
+                <section class="sub-chapter">
+                    <h3>2.3.1 Team-First Mindset</h3>
+                    <ul>
+                        <li>Sustained productivity comes from high-performing teams, and disassembling a high-performing team leads to a significant loss of productivity, even if the members are fully retained.</li>
+                        <li>High-performing teams are sacred.</li>
+                        <li>Teams take a long time to jell. Shifting individuals across teams can reset the clock on jelling, especially when there are significant differences in team culture.</li>
+                    </ul>
+                </section>
+
+                <section class="sub-chapter">
+                    <h3>2.3.3 Slack</h3>
+                    <ul>
+                        <li>You can often slow a team down by shifting resources to it because doing so creates new upstream constraints.</li>
+                    </ul>
+                </section>
+
+                <section class="sub-chapter">
+                    <h3>2.3.4 Shift Scope; Rotate</h3>
+                    <ul>
+                        <li>Shifting scope works better than moving people because it avoids re-jelling costs, and it preserves system behavior.</li>
+                        <li>The other approach that I've seen work well is to rotate individuals for a fixed period into an area that needs help. The fixed duration allows them to retain their identity and membership in their current team, giving their full focus to helping out, rather than splitting their focus between performing the work and finding membership in the new team.</li>
+                    </ul>
+                </section>
+
+                <section class="sub-chapter">
+                    <h3>2.4.3 Ways to Manage Entropy</h3>
+                    <ul>
+                        <li>IMO, the most important opportunity is designing your software to be flexible. I've described this as "fail open and layer policy": <strong>the best system rewrite is the one that didn't happen</strong>, and if you can <strong>avoid baking in arbitrary policy decisions</strong> that will change frequently over time, then you are much more likely to be able to keep using a system for the long term.</li>
+                        <li><strong>If you can keep your interfaces generic, then you will be able to skip the migration phase of system re-implementation, which tends to be the longest and trickiest phase, and you can iterate much more quickly</strong> and maintain fewer concurrent versions. There is absolutely a cost to maintaining the extra layer of indirection, but if you've already rewritten a system twice, take the time to abstract the interface as part of the third rewrite and thank yourself later. (By the time you'd do the fourth rewrite, you'd be dealing with migrating six times as many engineers).</li>
+                        <li>Having humans who perform gate-keeping activities creates very odd social dynamics and is rarely a great use of a human's time. [This is an American cultural standard, where hierarchy doesn't exist like in cultures where military service is required, I think]</li>
+                        <li>Treat gate-keeping as a significant implementation bug rather than as a stability feature to be emulated.</li>
+                    </ul>
+                </section>
+
+                <section class="sub-chapter">
+                    <h3>Organizational Risk</h3>
+                    <ul>
+                        <li>Organizational debt is the sibling of technical debt. <strong>[Organizational debt is all the people/culture compromises made to “just get it done”]</strong></li>
+                        <li>What I've found most successful is to identify a few [organizational debt] areas to improve, ensure you're making progress on those, and give yourself permission to do the rest poorly. Work with your manager to write this up as an explicit plan and agree on what reasonable progress looks like. These issues are still stored with your other bags of risk and responsibility, but you've agreed on expectations.</li>
+                    </ul>
+                </section>
+
+                <section class="sub-chapter">
+                    <h3>2.6.1 What Do You Do?</h3>
+                    <ul>
+                        <li>Write down your role in a meeting.</li>
+                    </ul>
+                </section>
+            </section>
+
+            
 
             <section class="chapter">
-                <h3>2.1 Sizing Teams</h3>
-                <ul>
-                    <li><strong>Manager-to-Engineer Ratio:</strong> Managers should typically support 6-8 engineers.</li>
-                    <li><strong>Manager-of-Managers Ratio:</strong> Managers of managers should support 4-6 managers.</li>
-                </ul>
+                <h2>Chapter 3: Tools</h2>
+
+                <section class="sub-chapter">
+                    <h3>3.2.1 Problem Discovery</h3>
+                    <ul>
+                        <li>The first phase of a planning cycle is exploring the different problems that you could pick up to solve. It's surprisingly common to skip this phase, but that, unsurprisingly, leads to inertia-driven local optimization. Taking the time to evaluate which problem to solve is one of the best predictors I've found of a team's long-term performance. [This is why we build the goals and requirements documents. This also highlights the importance of project planning.]</li>
+                        <li><strong>Compounding Leverage:</strong> What are the composable blocks you could start building today that would compound into major product or technical leverage over time? I think of this category of work as finding ways to get the benefit at least twice. These are potentially tasks that initially don't seem important enough to prioritize, but whose compounding value makes the work possible to prioritize. [This is the core ethos behind our road-map.]</li>
+                    </ul>
+                </section>
+
+                <section class="sub-chapter">
+                    <h3>3.3 Vision and Strategies</h3>
+                    <ul>
+                        <li>After experimenting with a handful of different approaches, agreeing on strategy and vision has been the most effective approach that I've found to alignment at scale.</li>
+                    </ul>
+                </section>
+
+                <section class="sub-chapter">
+                    <h3>3.3.1 Strategies and Visions</h3>
+                    <ul>
+                        <li><em>Strategies</em> are grounded documents that explain the trade-offs and actions that will be taken to address a specific challenge. <em>Visions</em> are aspirational documents that enable individuals who don't work closely together to make decisions that fit together cleanly.</li>
+                    </ul>
+                </section>
+
+                <section class="sub-chapter">
+                    <h3>3.3.2 Strategy</h3>
+                    <ul>
+                        <li>A <em>strategy</em> recommends specific actions that address a given challenge's constraints. A structure that I've found extremely effective has three sections: diagnosis, policies, and actions.
+                            <ul>
+                                <li><em>Diagnosis</em> is a theory describing the challenge at hand. at its core it is a very thorough problem statement.</li>
+                                <li><em>Policies</em> describe the general approach that you'll take and are often trade-offs between two competing goals.</li>
+                                <li><em>Actions</em> are when you apply your guiding policies to your diagnosis.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="sub-chapter">
+                    <h3>3.3.3 Vision</h3>
+                    <ul>
+                        <li>If strategies describe the harsh trade-offs necessary to overcome a particular challenge, then <em>visions</em> describe a future in which those trade-offs are no longer mutually exclusive.</li>
+                        <li>A vision is comprised of: vision statement, value proposition, capabilities, solved constraints, future constraints, reference materials, narrative.</li>
+                    </ul>
+                </section>
+
+                <section class="sub-chapter">
+                    <h3>3.4 Metrics and Baselines</h3>
+                    <ul>
+                        <li>Good goals are comprised of four specific kinds of numbers:
+                            <ul>
+                                <li><em>Target</em> states where you want to reach.</li>
+                                <li><em>Baseline</em> identifies where you are today.</li>
+                                <li><em>Trend</em> describes the current velocity.</li>
+                                <li><em>Time Frame</em> sets bounds for the change.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="sub-chapter">
+                    <h3>3.6.1 Why Migrations Matter</h3>
+                    <ul>
+                        <li>Migrations are the sole scalable fixes to technical debt.</li>
+                        <li>Migrations matter because they usually are the only available avenue to make meaningful progress on technical debt.</li>
+                        <li>Engineers hate technical debt. [Yeah, because we are the ones that have to eventually fix ad-hoc short term managerial decisions and understand the technical scope of these decisions]</li>
+                        <li>Engineering managers hate technical debt, too. [I wonder what happens going from Eng. manager to director that causes the switch in thinking about technical debt? Is it as a director you no longer have are responsible to the work involved in fixing tech debt?]</li>
+                        <li>Each migration aims to create technical leverage or reduce tech debt.</li>
+                        <li>Migrations are the only mechanisms to effectively manage technical debt as your company and code grow.</li>
+                    </ul>
+                </section>
+
+                <section class="sub-chapter">
+                    <h3>3.6.2 Running Good Migrations</h3>
+                    <ul>
+                        <li>In particular, starting but not finishing migrations often incurs significant technical debt, so your incentives and recognition structure should be careful to avoid perverse incentives.</li>
+                    </ul>
+                </section>
+
+                <section class="sub-chapter">
+                    <h3>3.7 Running an Engineering Reorg</h3>
+                    <ul>
+                        <li>Biggest positive impact on your organizations success: making technical migrations cheap (i.e., avoiding tech debt), and running clean re-organizations.</li>
+                        <li>Re-org checklist:
+                            <ul>
+                                <li>Validate that an organization change is the right tool. The two best types of re-org is one that solves a problem, and the one you don't do.</li>
+                                <li>Project head-count at least one year out</li>
+                                <li>Have the correct manager-to-engineer ratio. If engineering managers are expected to do hands-on technical work then their team should likely be 3-to-5 engineers</li>
+                                <li>Identify logical teams and groups of teams</li>
+                                <li>Plan staffing for the teams and groups</li>
+                                <li>Commit to moving forward</li>
+                                <li>Roll out the change</li>
+                                <li>Closing thought, an organization that is both (1) a collection of people and (2) a manifestation of an idea separate from the individuals comprising it. You can't reason about organizations purely from either direction. There are many exceedingly valid, different ways to think about any given re-organization, and you should use these ideas as one model for thinking through changes, not as a definitive roadmap.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="sub-chapter">
+                    <h3>3.8 Identify Your Controls (Understanding where to engage w/in an organization and where to hold back)</h3>
+                    <ul>
+                        <li>First step, pick controls: metrics, visions, strategies, organizational design, headcount, transfers, roadmaps</li>
+                        <li>Second step agree on the degree of alignment: I'll do it, preview, review, notes, no surprises, let me know</li>
+                        <li>Combine your controls and the degree of alignment for each, and you've established the interface between you and the folks you support.</li>
+                    </ul>
+                </section>
+
+                <section class="sub-chapter">
+                    <h3>3.12 Scaling Consistency: Designing Centralized Decision-Making Groups</h3>
+                    <ul>
+                        <li><strong>Be wary of organizational structures where decisions become authoritative and small groups act as rigid gatekeepers.</strong></li>
+                    </ul>
+                </section>
+
+                <section class="sub-chapter">
+                    <h3>3.12.2 Group Design (overall an important section for building groups. Two sections stand out)</h3>
+                    <ul>
+                        <li>Interface: defining how the group will interface with other groups</li>
+                        <li>Selection process: how to grow the group</li>
+                    </ul>
+                </section>
+
+                <section class="sub-chapter">
+                    <h3>3.13 Presenting to Senior Leadership (this entire section is worth reading)</h3>
+                    <ul>
+                        <li>Communication is company specific</li>
+                        <li>General tips I liked
+                            <ul>
+                                <li>Start with the conclusion (i.e., start with what is important)</li>
+                                <li>Frame why the topic matters (i.e., explain why your works matters to the company)</li>
+                                <li>Everyone loves a narrative (i.e., where things are, how you got there, and where you're going now)</li>
+                                <li>Answer directly (i.e., don't hide problems, explain your plans to address them)</li>
+                                <li>Make a clear ask (i.e., go into a meeting with a clear goal. Start the meeting by explicitly framing your goal)</li>
+                            </ul>
+                        </li>
+                        <li>General approach when presenting to senior leaders
+                            <ul>
+                                <li>Tie topic to business value. 1-2 sentences to answer the question, "why should anyone care?"</li>
+                                <li>Establish historical narrative. 2-4 sentences to help folks understand how things are going, how we got here, and what the next planned step is.</li>
+                                <li>Explicit Ask. 1-2 sentences defining what are you looking for from the audience?</li>
+                                <li>Data-driven diagnosis. Few paragraphs to a page, explain the current constraints and context, primarily through data.</li>
+                                <li>Decision-making principles. Explain the principles you're applying to the diagnosis, articulating the mental model you are using to make decisions.</li>
+                                <li>What's next and when it'll be done. Apply your principles to the diagnosis to generate the next steps.</li>
+                                <li>Return to your explicit ask.</li>
+                            </ul>
+                        </li>
+                        </ul>
+                    </section>
+
+                    <section class="sub-chapter">
+                        <h3>3.14 Time Management</h3>
+                        <ul>
+                            <li>Prioritize long-term success over short-term quality.</li>
+                            <li>Trust the system you build. Handling exceptions can easily consume all of your energy, and either delegating them or designing them out of the system is essential to <em>scaling</em> your time.</li>
+                            <li>Hire until you are slightly ahead of growth. The best gift of time management that you can give yourself is hiring capable folks, and hiring them before you get overwhelmed. By having a clear organizational design, you can hire folks into roles before their absence becomes crippling.</li>
+                        </ul>
+                    </section>
+
+                    <section class="sub-chapter">
+                        <h3>3.15 Communities of Learning</h3>
+                        <ul>
+                            <li>Checking-in. Have each person in the group give a 20 or 30 second self introduction. State your name, your role, and one sentence about what's on your mind.</li>
+                    </section>
             </section>
 
             <section class="chapter">
-                <h3>2.2.2 Dealing with Stakeholder Impatience</h3>
-                <ul>
-                    <li>When a team is repaying technical debt, stakeholders often become impatient for new feature delivery.</li>
-                    <li><strong>Obligation:</strong> Prevent this impatience from causing a backslide into accumulating more debt.</li>
-                </ul>
+                <h2>Chapter 4: Approaches</h2>
+    
+                <section class="sub-chapter">
+                    <h3>4.2 Saying No</h3>
+                    <ul>
+                        <li>[This is my personal belief as well, and I'm excited it was stated so well in this book] "It was in that era of my career that I came to view management as, at its core, a <strong>moral profession</strong>. We have the opportunity to create an environment for those around us to be their best, in <strong>fair</strong> surroundings. For me, that's both an opportunity and an obligation for managers, and saying no in that room with my manager and CTO was, in part, my decision to hold the line on what's right."</li>
+                    </ul>
+                </section>
+    
+                <section class="sub-chapter">
+                    <h3>4.2.1 Constraints</h3>
+                    <ul>
+                        <li>Folks who communicate a 'no' effectively are not the firmest of speakers, nor do they make frequent use of the word itself. They are able to convincingly explain their teams' constraints and articulate why the proposed path is either unattainable or undesirable. [I need to improve in this area of influence]</li>
+                        <li>Articulating your constraints depends on the particulars of the issue at hand, but Will finds two topics are frequent venues of disagreement. The first is <strong>velocity</strong>: Why is this taking so long when it should take a couple of hours? The other is <strong>prioritization</strong>: Why can't you work on this other, more important project?</li>
+                    </ul>
+                </section>
+    
+                <section class="sub-chapter">
+                    <h3>4.2.3 Priorities</h3>
+                    <ul>
+                        <li>Break tasks into three discrete steps:
+                            <ul>
+                                <li>Document all incoming tasks</li>
+                                <li>Develop guiding principles for how work is selected</li>
+                                <li>Share subsets of tasks you've selected based on those guiding principles</li>
+                            </ul>
+                        </li>
+                        <li>Keep asking the team and your manager, "does this seem like the right list of asks?"</li>
+                        <li>[Commonplace within orgs that have little experience with software / deep learning development and execution] "The most controversial guides tend to be statements about the value of current work versus future work, for example, doing investment work today that will pay off in two years but limit value in the short term. One technique that Will has found useful for this particular scenario is specifying quotas for both immediate and long-term work"</li>
+                        <li>How do we get management to appreciate and understand mid-to-long term investment (i.e., appreciating technical debt, and software architecture)?</li>
+                        <li>When a stakeholder disagrees with your priorities:
+                            <ul>
+                                <li>Understand the stakeholder requests</li>
+                                <li>Sit down with them, test their ask against your guiding principles and current prioritized work.</li>
+                                <li>If their request is more important than your current work, shift priorities <em>at your next planning meeting</em>.</li>
+                                <li>To limit churn created by shifting priorities, wait until the next planning meeting. Have planning meetings at minimum once a month.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+    
+                <section class="sub-chapter">
+                    <h3>4.3.5 Your Company, Your Team, Yourself [<strong>My Ethos</strong>]</h3>
+                    <ul>
+                        <li>My mantra for guiding decision-making: do the right thing for the company, the right thing for the team, and the right thing for yourself, in that order</li>
+                        <li>This usually results in burning social capital, especially in organizations who can't admit to mistakes, or who's primary goal is to be promoted. Ego management and gate-keeping tend to take hold in organizations like this.</li>
+                        <li>This mantra suggests "pushing back on a timeline that would force your team into a death march, even though it's uncomfortable to have that conversation with your manager or your product partner". [I feel good managers are OK with telling uncomfortable truths to VPs instead of comforting lies. As a matter of fact great managers understand this is part of their core responsibility.]</li>
+                    </ul>
+                </section>
+    
+                <section class="sub-chapter">
+                    <h3><strong>4.5 Ways Engineering Managers Get Stuck</strong></h3>
+                    <ul>
+                        <li>[Very important list. I'm only going to include ones I think I need to improve on, or ones I've seen in my professional career]</li>
+                        <li>Only manage up.
+                            <ul>
+                                <li>Some managers focus so much on following their management's wishes that their team evaporates beneath them</li>
+                            </ul>
+                        </li>
+                        <li>Don't spend time building relationships
+                            <ul>
+                                <li>Your team's impact depends largely on doing something that other teams or customers want, and getting it shipped out the door. This is extraordinarily hard without a supportive social network within the company (i.e., no gate-keeping, open dialogue, growth mindset)</li>
+                            </ul>
+                        </li>
+                        <li>Forget that their manager is a human being
+                            <ul>
+                                <li>It's easy to get frustrated when your manager puts you in a bad situation. To have a good relationship with your manager, you have to give them room to make mistakes.</li>
+                            </ul>
+                        </li>
+                        <li>Abscond rather than delegate
+                            <ul>
+                                <li>Delegation is important, but it's easy to go too far and for the manager to ignore the critical responsibilities they have asked others to take on.</li>
+                            </ul>
+                        </li>
+                        <li>Become disconnected from ground truth
+                            <ul>
+                                <li>Particular at larger companies, it can become frequent to make decision that appear to be fundamentally disconnected from reality.</li>
+                            </ul>
+                        </li>
+                        <li>Mistake title for impact</li>
+                        <li>Confuse authority with truth
+                            <ul>
+                                <li>Authority lets one get away with weak arguments and poor justifications, but it's a pretty expensive way to work with people, because (if they are in a complicated compensation or life situation) they'll eventually turn off their minds and simply follow orders. <strong>Otherwise, they'll just leave</strong>.</li>
+                            </ul>
+                        </li>
+                        <li>Only see the problems
+                            <ul>
+                                <li>It's easy to see what's going wrong, and forget to celebrate the good stuff. Down this path lies frustration and madness.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+    
+                <section class="sub-chapter">
+                    <h3>4.8 Setting Organizational Direction: Mining for Direction</h3>
+                    <ul>
+                        <li>[I've noticed this missing]
+                            <ul>
+                                <li>First phase is to cast the widest net possible for ideas. Do this by talking to folks who have worked at different companies (especially if you've only worked at one for a long time), and ask what those companies did really well.</li>
+                                <li>Talk to your team or adjacent team and see if there are ideas to draw out that they've been noodling on but haven't yet volunteered.</li>
+                                <li><strong>Read some new technical papers</strong></li>
+                                <li>Use your network and reach out to people in your social network at interesting/different companies</li>
+                                <li>First phase is discovery without judgement</li>
+                            </ul>
+                        </li>
+                        <li>After first phase, craft results into a strategy (1), figure out the key decisions (build a kind of ad hoc sensitivity analysis (2))
+                            <ul>
+                                <li>(1) lethain.com/good-strategy-bad-strategy/</li>
+                                <li>(2) en.wikipedia.org/wiki/Sensitivity_analysis</li>
+                            </ul>
+                        </li>
+                        <li>Once you have the problems, talk with experienced leaders at other companies, and ask them how they've solved these issues. Ask them for their stores.</li>
+                        <li>In order for this to work you need to distill your strategy and sensitivity analysis document into something short and comprehensible.</li>
+                    </ul>
+                </section>
+    
+                <section class="sub-chapter">
+                    <h3>4.9 Close Out, Solve, or Delegate</h3>
+                    <ul>
+                        <li>For every problem that comes your way (i.e., an email asking for a decision, a production problem, a dispute around on-call, a request to transfer from one team to another) you should pick one of three options:
+                            <ul>
+                                <li><u>Close out</u>. Close it out in a way such that this specific ask is entirely resolved.</li>
+                                <li><u>Solve</u>. Design a solution such that you won't need to spend time on this particular kind of ask again in the next six months</li>
+                                <li><u>Delegate</u>. Ideally, this is to redirect the ask to someone who is responsible for that kind of work, but sometimes it is a one-off.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
             </section>
 
-            <section class="chapter">
-                <h3>2.3.1 Team-First Mentality</h3>
-                <ul>
-                    <li><strong>High-Performing Teams:</strong> Sustained productivity comes from high-performing teams. Disassembling them significantly reduces productivity, even if individual members are retained.</li>
-                    <li><strong>Value of Stability:</strong> High-performing teams are sacred and take time to gel. Shifting individuals across teams can reset this process, particularly when team cultures differ significantly.</li>
-                </ul>
-            </section>
 
-            <section class="chapter">
-                <h3>2.3.3 The Cost of Adding Resources</h3>
-                <ul>
-                    <li><strong>Counterintuitive Slowdowns:</strong> Adding resources to a team can often slow it down due to the creation of new upstream constraints.</li>
-                </ul>
-            </section>
-
-            <section class="chapter">
-                <h3>2.3.4 Scope Shifts and Rotations</h3>
-                <ul>
-                    <li><strong>Shifting Scope:</strong> Shifting project scope is generally preferable to moving people, as it avoids the costs of re-gelling and preserves existing system behavior.</li>
-                    <li><strong>Temporary Rotations:</strong> Rotating individuals for a fixed period into areas needing help can be effective. This allows them to retain their primary team identity while providing focused support.</li>
-                </ul>
-            </section>
-
-            <section class="chapter">
-                <h3>2.4.3 Managing Entropy Through System Design</h3>
-                <ul>
-                    <li><strong>Flexible Software Design:</strong> Design software to be flexible from the start. This is described as "fail open and layer policy."</li>
-                    <li><strong>Avoid Rewrites:</strong> The best system rewrite is the one that doesn't happen. Avoid baking in arbitrary policy decisions that are likely to change.</li>
-                    <li><strong>Generic Interfaces:</strong> Keep interfaces generic to avoid complex migration phases during system updates. This allows for faster iteration and reduces the need to maintain multiple versions. While there's a cost to maintaining an extra layer of abstraction, it can save time and effort in the long run, especially after multiple rewrites.</li>
-                    <li><strong>Gatekeeping:</strong> Using humans for gatekeeping can create negative social dynamics and is inefficient. Treat gatekeeping as a bug, not a feature. This appears to be more prevalent in cultures without a strong hierarchical structure, such as those with mandatory military service.</li>
-                </ul>
-            </section>
-
-            <section class="chapter">
-              <h3>Organizational Risk</h3>
-              <ul>
-                  <li><strong>Organizational Debt:</strong> Similar to technical debt, organizational debt arises from compromises made to "just get it done." It involves people and cultural issues.</li>
-                  <li><strong>Managing Organizational Debt:</strong>
-                      <ul>
-                        <li>Identify a few areas of organizational debt to actively improve.</li>
-                        <li>Ensure you're making progress in these areas.</li>
-                        <li>Give yourself permission to do other areas poorly.</li>
-                        <li>Develop an explicit plan with your manager and agree on what constitutes reasonable progress.</li>
-                        <li>These issues are still stored with your other bags of risk and responsibility, but you've agreed on expectations.</li>
-                      </ul>
-                  </li>
-              </ul>
-          </section>
-
-          <section class="chapter">
-            <h3>2.6.1 Defining Your Role</h3>
-            <ul>
-                <li><strong>Document Your Role:</strong> In meetings, write down your role to clarify responsibilities and expectations.</li>
-            </ul>
-        </section>
         </section>
     </article>
 </body>
